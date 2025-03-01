@@ -1,5 +1,6 @@
 import shutil
 import os
+import json
 
 # Define options for path selection
 options = {'1': 'Current path - main.py stored path',
@@ -32,15 +33,17 @@ while True:
 # Get all files in directory
 print(f"Files in {my_path}: {os.listdir(my_path)}")
 
-# Store categories and their extensions
-categories = {
-    "Videos": [".mp4", ".mkv", ".avi"],
-    "Pictures": [".jpg", ".jpeg", ".png", ".gif"],
-    "Documents": [".txt", ".pdf", ".docx", ".xlsx"],
-    "Music": [".mp3", ".wav", ".flac"],
-    "Archives": [".zip", ".rar", ".tar", ".gz"]
-}
 
+try:
+    with open('categories.json', 'r') as file:
+        categories = json.load(file)
+except FileNotFoundError:
+    print("The file 'categories.json' was not found.")
+except json.JSONDecodeError:
+    print("Error decoding JSON from the file.")
+except Exception as e:
+    print(f"An unexpected error occurred: {e}")
+        
 # Create folders if needed
 for folder in categories.keys():
     folder_path = os.path.join(my_path, folder)
@@ -67,4 +70,3 @@ for file in os.listdir(my_path):  # Loop through files in the directory
                 print(f"Moved {file} → {folder}/")
             except Exception as e:
                 print(f"Error moving {file}: {e}")
-6
