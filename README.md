@@ -29,8 +29,8 @@ The project offers two implementations:
 
 1. Clone this repository:
 ```
-git clone https://github.com/yourusername/smart-file-organizer.git
-cd smart-file-organizer
+git clone https://github.com/yourusername/file-organizer-cli.git
+cd file-organizer-cli
 ```
 
 2. Make the Bash script executable (if using the Bash implementation):
