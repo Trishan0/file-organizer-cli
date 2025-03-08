@@ -1,6 +1,6 @@
-# Smart File Organizer
+# File Organizer CLI
 
-Smart File Organizer is a tool that automatically organizes your files into categorized directories based on file extensions. It helps keep your directories clean and structured by sorting files into appropriate folders such as Documents, Images, Videos, etc.
+File Organizer CLI is a tool that automatically organizes your files into categorized directories based on file extensions. It helps keep your directories clean and structured by sorting files into appropriate folders such as Documents, Images, Videos, etc.
 
 The project offers two implementations:
 - A Bash script for Unix/Linux users
